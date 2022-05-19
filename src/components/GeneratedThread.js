@@ -1,10 +1,13 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const GeneratedThread = (numberOfThreads, userTweet, thread) => {
-  const [generatedTweet, setGeneratedTweet] = useState(["", "", "", ""])
-
-  // making different inputs based on text
+const GeneratedThread = (numberOfThreads, thread) => {
+  const [shown, setShown] = useState(["", "", "", ""])
+  const [oldThread, setOldThread] = useState(thread)
+  if (oldThread !== thread) {
+    setOldThread(thread)
+    setShown(thread)
+  }
 
   const displayedInputs = () => {
     const inputs = [];
@@ -13,9 +16,9 @@ const GeneratedThread = (numberOfThreads, userTweet, thread) => {
         <textarea
           id="1"
           className="Input"
-          placeholder="this is just a placeholder div"
           maxLength="280"
-          value = {generatedTweet[i]}
+          value = {shown[i]}
+          onChange={(e) => setShown(shown.splice(i, 1, e.target.value))}
         />
       );
     }

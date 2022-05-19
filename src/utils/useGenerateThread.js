@@ -1,35 +1,19 @@
-// useEffect(() => {
-//     console.log('this was called')
-//     const getText = async () => {
-//        const hitTweet = await fetch('http://127.0.0.1:8000/tweet', {  
-//       }).then((response) => response.json())
-//        console.log(hitTweet)
-//        return hitTweet
-//     }
-//   }, [])
+import { useState, useEffect } from "react";
 
-import { useEffect, useState } from "react"
-
-
-async function generateThread(tweet, numberOfThreads) {
-            console.log('this was called')
-               const hitTweet = await fetch('http://127.0.0.1:8000', {  
-              }).then((response) => response.json())
-               console.log(hitTweet)
-               return hitTweet
-            
-        }
-
-
-
-
+async function generateThread(thread, numberOfThreads, setState) {
+  console.log(JSON.stringify({ body: thread, numberOfThreads}));
+  const hitTweet = await fetch("http://127.0.0.1:8000/tweet/", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ thread, numberOfThreads }),
+  }).then((response) => response.json());
+  setState(hitTweet.substring(1).split(" \n-"))
+}
 
 export const useGenerateThread = (tweet, numberOfThreads) => {
-    const [thread, setThread] = useState(null)
-    const generate = () => generateThread(tweet, numberOfThreads)
-
-    // useEffect(() => {
-    //     setThread(output)
-    // }, [])
-    return [generate, thread]
-}
+  const [thread, setThread] = useState("", "", "", "");
+  const generate = () => generateThread(tweet, numberOfThreads, setThread);
+  return [generate, thread];
+};
