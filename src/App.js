@@ -8,8 +8,8 @@ function App() {
   const [numberOfThreads, setNumberOfThreads] = useState(1);
   const [userTweet, setUserTweet] = useState("");
   const [signOut, signIn, userInfo] = useTwitterAuth();
-  const [generate, thread] = useGenerateThread(userTweet, numberOfThreads);
-  const displayedOutput = GeneratedThread(numberOfThreads, thread);
+  const [generate, threads] = useGenerateThread(userTweet, numberOfThreads);
+  const displayedOutput = GeneratedThread(numberOfThreads, threads);
 
   const addThread = () => {
     numberOfThreads < 4
@@ -25,14 +25,23 @@ function App() {
 
   return (
     <div className="App">
-      <header className="Header" style={{top: 0, marginTop: 0, fontSize: 40, padding: 10}}>Tweeter Man</header>
+      <header
+        className="Header"
+        style={{ top: 0, marginTop: 0, fontSize: 40, padding: 10 }}
+      >
+        Tweeter Man
+      </header>
       {userInfo ? (
         <div
           id="application"
           className="Container"
           style={{ display: "block" }}
         >
-          <button className="Btn" onClick={signOut} style={{top: 0, right: 0, position: "absolute"}}>
+          <button
+            className="Btn"
+            onClick={signOut}
+            style={{ top: 0, right: 0, position: "absolute" }}
+          >
             Sign Out
           </button>
           <header className="Header">
@@ -61,7 +70,11 @@ function App() {
         </div>
       ) : (
         <div id="login" className="Container">
-          <button className="Btn" onClick={signIn} style={{padding: 50, fontSize: 20}}>
+          <button
+            className="Btn"
+            onClick={signIn}
+            style={{ padding: 50, fontSize: 20 }}
+          >
             Sign in with Twitter
           </button>
         </div>
