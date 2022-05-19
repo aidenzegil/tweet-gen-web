@@ -1,0 +1,217 @@
+body {
+  -webkit-animation: theme 21s linear infinite;
+          animation: theme 21s linear infinite;
+}
+
+body:before {
+  content: '';
+  display: block;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  width: 100vmax;
+  height: 100vmax;
+  background: rgba(0, 0, 0, 0.05);
+  -webkit-animation: background 90s linear infinite;
+          animation: background 90s linear infinite;
+}
+
+body:after {
+  left: 15vw;
+}
+
+body:before {
+  right: 15vw;
+  -webkit-animation-delay: -30s;
+          animation-delay: -30s;
+  animation-direction: reverse;
+}
+
+@-webkit-keyframes theme {
+  0% {
+    background: #74C390;
+  }
+  16% {
+    background: #5DBDB6;
+  }
+  33% {
+    background: #59D4E1;
+  }
+  50% {
+    background: #51BCE8;
+  }
+  66% {
+    background: #FA5374;
+  }
+  83% {
+    background: #E46653;
+  }
+  100% {
+    background: #74C390;
+  }
+}
+
+@keyframes theme {
+  0% {
+    background: #74C390;
+  }
+  16% {
+    background: #5DBDB6;
+  }
+  33% {
+    background: #59D4E1;
+  }
+  50% {
+    background: #51BCE8;
+  }
+  66% {
+    background: #FA5374;
+  }
+  83% {
+    background: #E46653;
+  }
+  100% {
+    background: #74C390;
+  }
+}
+
+@-webkit-keyframes background {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes background {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.App {
+  text-align: center;
+  font-family: 'Helvetica Neue';
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.Container {
+  height: 85%;
+  width: 85%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-backdrop-filter: saturate(1.5);
+          backdrop-filter: saturate(1.5);
+  border: 2px solid white;
+  overflow-y: auto;
+  max-width: 550px;
+  border-radius: 25px;
+}
+
+.Btn {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 10px;
+}
+
+.Input {
+  min-height: 15vh;
+  width: 85%;
+  font-size: 20px;
+  color: white;
+  font-family: 'Helvetica Neue';
+  background-color: #1DA1F2;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  resize: none;
+}
+
+.Header {
+  color: white;
+  font-size: 25px;
+  margin-top: 10px;
+  padding: 5%;
+}
+
+/* CSS */
+.Btn {
+  background: #1DA1F2;
+  border: 1px solid #1DA1F2;
+  border-radius: 6px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+          box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Helvetica Neue';
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 10px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.Btn:hover,
+.Btn:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #1DA1F2;
+}
+
+.Btn:active {
+  opacity: .5;
+}
+/*# sourceMappingURL=App.css.map */
