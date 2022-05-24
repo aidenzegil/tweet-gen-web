@@ -4,8 +4,7 @@ async function generateThread(tweet, numThreads, thread = []) {
 
   if (thread.length >= numThreads) return thread
   
-  const prompt = "Continue "  + [tweet, ...thread].join("\n\n") + "\n\n"
-  console.log(prompt)
+  const prompt = "Continue "  + [tweet, ...thread].join("") + "\n"
 
   const result = await fetch("http://127.0.0.1:8000/tweet/", {
     method: "POST",
@@ -15,9 +14,7 @@ async function generateThread(tweet, numThreads, thread = []) {
     body: JSON.stringify({ sentPrompt: prompt }),
   }).then((response) => response.json())
 
-
-  console.log(result)
-  const newThread = (result.choices[0].text)
+  const newThread = (result.choices[0].text.trim())
 
   return generateThread(tweet, numThreads, [...thread, newThread])
 }

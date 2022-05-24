@@ -5,21 +5,22 @@ import GeneratedThread from "./components/GeneratedThread";
 import { useGenerateThread } from "./utils/useGenerateThread";
 
 function App() {
-  const [numberOfThreads, setNumberOfThreads] = useState(1);
+  const [numThreads, setNumThreads] = useState(1);
   const [userTweet, setUserTweet] = useState("");
   const [signOut, signIn, userInfo] = useTwitterAuth();
-  const [generate, threads] = useGenerateThread(userTweet, numberOfThreads);
-  const displayedOutput = GeneratedThread(numberOfThreads, threads);
+  const [generate, threads] = useGenerateThread(userTweet, numThreads);
+  
+  const displayedOutput = GeneratedThread(numThreads, threads);
 
   const addThread = () => {
-    numberOfThreads < 4
-      ? setNumberOfThreads(numberOfThreads + 1)
+    numThreads < 4
+      ? setNumThreads(numThreads + 1)
       : alert("Maximum thread amount reached");
   };
 
   const removeThread = () => {
-    numberOfThreads > 1
-      ? setNumberOfThreads(numberOfThreads - 1)
+    numThreads > 1
+      ? setNumThreads(numThreads - 1)
       : alert("Minimum thread amount reached");
   };
 
