@@ -1,13 +1,11 @@
 import "./sass/App.css";
 import { useState } from "react";
-import { useTwitterAuth } from "./utils/useTwitterAuth";
 import GeneratedThread from "./components/GeneratedThread";
 import { useGenerateThread } from "./utils/useGenerateThread";
 
 function App() {
   const [numThreads, setNumThreads] = useState(1);
   const [userTweet, setUserTweet] = useState("");
-  const [signOut, signIn, userInfo] = useTwitterAuth();
   const [generate, threads] = useGenerateThread(userTweet, numThreads);
   
   const displayedOutput = GeneratedThread(numThreads, threads);
@@ -32,19 +30,11 @@ function App() {
       >
         Tweeter Man
       </header>
-      {userInfo ? (
         <div
           id="application"
           className="Container"
           style={{ display: "block" }}
         >
-          <button
-            className="Btn"
-            onClick={signOut}
-            style={{ top: 0, right: 0, position: "absolute" }}
-          >
-            Sign Out
-          </button>
           <header className="Header">
             Put the start of your thread here, I'll take care of the rest!
           </header>
@@ -69,17 +59,6 @@ function App() {
             </button>
           </div>
         </div>
-      ) : (
-        <div id="login" className="Container">
-          <button
-            className="Btn"
-            onClick={signIn}
-            style={{ padding: 50, fontSize: 20 }}
-          >
-            Sign in with Twitter
-          </button>
-        </div>
-      )}
     </div>
   );
 }
