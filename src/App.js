@@ -26,7 +26,7 @@ function App() {
     <div className="App">
       <header
         className="Header"
-        style={{ top: 0, marginTop: 0, fontSize: 40, padding: 10 }}
+        style={{ top: 0, marginTop: 0, fontSize: 50, padding: 15 }}
       >
         Tweeter Man
       </header>
@@ -57,6 +57,7 @@ function App() {
             <button className="Btn" onClick={removeThread}>
               Remove Thread
             </button>
+            <header className="Header" style={{fontSize: 20}}><a href="https://aidenzegil.com">Like this project? Check out my website</a></header>
           </div>
         </div>
     </div>

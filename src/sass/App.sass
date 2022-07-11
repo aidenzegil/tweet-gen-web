@@ -1,51 +1,4 @@
 
-body
-    animation: theme 21s linear infinite
-    &:after
-    &:before
-        content: ''
-        display: block
-        position: fixed
-        z-index: -1
-        top: 0
-        width: 100vw // IE/Edge
-        height: 100vh // fallback
-        width: 100vmax
-        height: 100vmax
-        background: rgba(0,0,0,0.05)
-        animation: background 90s linear infinite
-
-    &:after
-        left: 15vw
-
-    &:before
-        right: 15vw
-        animation-delay: -30s
-        animation-direction: reverse
-
-@keyframes theme
-    0%
-        background: #74C390
-    16%
-        background: #5DBDB6
-    33%
-        background: #59D4E1
-    50%
-        background: #51BCE8
-    66%
-        background: #FA5374
-    83%
-        background: #E46653
-    100%
-        background: #74C390
-
-@keyframes background
-    0%
-        transform: rotate(0deg)
-
-    100%
-        transform: rotate(360deg)
-
 .App
     text-align: center
     font-family: 'Helvetica Neue'
@@ -55,6 +8,7 @@ body
     align-items: center
     height: 100vh
     width: 100vw
+    background: #15202B
     overflow: hidden
 
 .Container
@@ -63,11 +17,12 @@ body
     display: flex
     justify-content: center
     align-items: center
-    backdrop-filter: saturate(1.5)
+    background: #15202B
     border: 2px solid white
     overflow-y: auto
     max-width: 550px
     border-radius: 25px
+    box-shadow: 0px 0px 15px 0px #1DA1F2
 
 .Btn
     height: fit-content
@@ -80,24 +35,32 @@ body
     font-size: 20px
     color: white
     font-family: 'Helvetica Neue'
-    background-color: #1DA1F2
+    background-color: #15202B
     border-radius: 15px
     display: flex
     margin: auto
     resize: none
 
 .Header
-    color: white
-    font-size: 25px
+    color: #fff
+    text-decoration: none
+    font-size: 30px
     margin-top: 10px
     padding: 5%
+    text-shadow: 0px 0px 10px #1DA1F2
 
-/* CSS */
+a 
+    color: #fff
+    text-decoration: none
+
+a:hover 
+    color: #1DA1F2
+
 .Btn
     background: #1DA1F2
     border: 1px solid #1DA1F2
     border-radius: 6px
-    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px
+    box-shadow: 0px 0px 5px 0px #1DA1F2
     box-sizing: border-box
     color: #FFFFFF
     cursor: pointer
