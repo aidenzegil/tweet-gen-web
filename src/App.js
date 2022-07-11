@@ -57,6 +57,7 @@ function App() {
             <button className="Btn" onClick={removeThread}>
               Remove Thread
             </button>
+            <header className="Header" style={{fontSize: 20}}><a href="https://aidenzegil.com">Like this project? Check out my website</a></header>
           </div>
         </div>
     </div>
