@@ -1,104 +1,3 @@
-body {
-  -webkit-animation: theme 21s linear infinite;
-          animation: theme 21s linear infinite;
-}
-
-body:before {
-  content: '';
-  display: block;
-  position: fixed;
-  z-index: -1;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  width: 100vmax;
-  height: 100vmax;
-  background: rgba(0, 0, 0, 0.05);
-  -webkit-animation: background 90s linear infinite;
-          animation: background 90s linear infinite;
-}
-
-body:after {
-  left: 15vw;
-}
-
-body:before {
-  right: 15vw;
-  -webkit-animation-delay: -30s;
-          animation-delay: -30s;
-  animation-direction: reverse;
-}
-
-@-webkit-keyframes theme {
-  0% {
-    background: #74C390;
-  }
-  16% {
-    background: #5DBDB6;
-  }
-  33% {
-    background: #59D4E1;
-  }
-  50% {
-    background: #51BCE8;
-  }
-  66% {
-    background: #FA5374;
-  }
-  83% {
-    background: #E46653;
-  }
-  100% {
-    background: #74C390;
-  }
-}
-
-@keyframes theme {
-  0% {
-    background: #74C390;
-  }
-  16% {
-    background: #5DBDB6;
-  }
-  33% {
-    background: #59D4E1;
-  }
-  50% {
-    background: #51BCE8;
-  }
-  66% {
-    background: #FA5374;
-  }
-  83% {
-    background: #E46653;
-  }
-  100% {
-    background: #74C390;
-  }
-}
-
-@-webkit-keyframes background {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes background {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
 .App {
   text-align: center;
   font-family: 'Helvetica Neue';
@@ -117,6 +16,7 @@ body:before {
           align-items: center;
   height: 100vh;
   width: 100vw;
+  background: #15202B;
   overflow: hidden;
 }
 
@@ -132,12 +32,13 @@ body:before {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-backdrop-filter: saturate(1.5);
-          backdrop-filter: saturate(1.5);
+  background: #15202B;
   border: 2px solid white;
   overflow-y: auto;
   max-width: 550px;
   border-radius: 25px;
+  -webkit-box-shadow: 0px 0px 15px 0px #1DA1F2;
+          box-shadow: 0px 0px 15px 0px #1DA1F2;
 }
 
 .Btn {
@@ -156,7 +57,7 @@ body:before {
   font-size: 20px;
   color: white;
   font-family: 'Helvetica Neue';
-  background-color: #1DA1F2;
+  background-color: #15202B;
   border-radius: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -166,19 +67,19 @@ body:before {
 }
 
 .Header {
-  color: white;
-  font-size: 25px;
+  color: #fff;
+  font-size: 30px;
   margin-top: 10px;
   padding: 5%;
+  text-shadow: 0px 0px 10px #1DA1F2;
 }
 
-/* CSS */
 .Btn {
   background: #1DA1F2;
   border: 1px solid #1DA1F2;
   border-radius: 6px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-          box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  -webkit-box-shadow: 0px 0px 5px 0px #1DA1F2;
+          box-shadow: 0px 0px 5px 0px #1DA1F2;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: #FFFFFF;

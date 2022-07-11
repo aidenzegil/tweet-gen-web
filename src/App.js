@@ -26,7 +26,7 @@ function App() {
     <div className="App">
       <header
         className="Header"
-        style={{ top: 0, marginTop: 0, fontSize: 40, padding: 10 }}
+        style={{ top: 0, marginTop: 0, fontSize: 50, padding: 15 }}
       >
         Tweeter Man
       </header>
